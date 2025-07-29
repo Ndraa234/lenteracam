@@ -23,20 +23,20 @@ class AdminController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'username' => 'required|string',
+            'nama' => 'required|string',
             'password' => 'required|string',
         ]);
 
-        $credentials = $request->only('username', 'password');
+        $credentials = $request->only('nama', 'password');
         
         if (Auth::guard('admin')->attempt($credentials, $request->filled('remember'))) {
             $request->session()->regenerate();
-            return redirect()->intended(route('admin.dashboard'))->with('success', 'Welcome back, ' . Auth::guard('admin')->user()->username . '!');
+            return redirect()->intended(route('admin.dashboard'))->with('success', 'Welcome back, ' . Auth::guard('admin')->user()->nama . '!');
         }
 
         return back()->withErrors([
-            'username' => 'The provided credentials do not match our records.',
-        ])->withInput($request->only('username'));
+            'nama' => 'The provided credentials do not match our records.',
+        ])->withInput($request->only('nama'));
     }
 
     public function logout(Request $request)
@@ -162,12 +162,12 @@ class AdminController extends Controller
     public function createAdmin(Request $request)
     {
         $request->validate([
-            'username' => 'required|string|max:50|unique:admin,username',
+            'nama' => 'required|string|max:50|unique:admin,nama',
             'password' => 'required|string|min:6',
         ]);
 
         Admin::create([
-            'username' => $request->username,
+            'nama' => $request->nama,
             'password' => Hash::make($request->password),
         ]);
 

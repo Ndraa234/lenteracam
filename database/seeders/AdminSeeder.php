@@ -15,12 +15,12 @@ class AdminSeeder extends Seeder
     public function run(): void
     {
         Admin::create([
-            'username' => 'admin',
+            'nama' => 'admin',
             'password' => Hash::make('admin123'),
         ]);
 
         $this->command->info('Default admin user created successfully!');
-        $this->command->info('Username: admin');
+        $this->command->info('Nama: admin');
         $this->command->info('Password: admin123');
     }
 } 

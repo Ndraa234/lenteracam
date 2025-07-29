@@ -5,12 +5,9 @@
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h2 style="color: #2d4e7c; font-weight: bold;">Welcome, {{ Auth::guard('admin')->user()->username }}!</h2>
+            <h2 style="color: #2d4e7c; font-weight: bold;">Welcome, {{ Auth::guard('admin')->user()->nama }}!</h2>
             <p class="text-muted mb-0">Here's an overview of your camera rental system</p>
         </div>
-        <button class="btn btn-primary">
-            <i class="fa-solid fa-plus me-2"></i>Add New User
-        </button>
     </div>
 
     <!-- Statistics Cards -->
@@ -98,10 +95,8 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>User</th>
+                            <th>Name</th>
                             <th>Email</th>
-                            <th>Role</th>
-                            <th>Status</th>
                             <th>Joined</th>
                             <th>Actions</th>
                         </tr>
@@ -110,44 +105,14 @@
                         <tr>
                             <td>
                                 <div class="d-flex align-items-center">
-                                    <div class="profile-pic me-3" style="width: 35px; height: 35px; font-size: 0.8rem;">
-                                        YF
-                                    </div>
                                     <div>
-                                        <div class="fw-bold">Yustira Fatimah</div>
-                                        <small class="text-muted">ID: USR001</small>
+                                        <div class="fw-bold"></div>
+                                        <small class="text-muted"></small>
                                     </div>
                                 </div>
                             </td>
-                            <td>yustira@example.com</td>
-                            <td><span class="badge bg-primary">Admin</span></td>
-                            <td><span class="badge bg-success">Active</span></td>
-                            <td>2024-01-15</td>
-                            <td>
-                                <button class="btn btn-sm btn-outline-primary me-1">
-                                    <i class="fa-solid fa-edit"></i>
-                                </button>
-                                <button class="btn btn-sm btn-outline-danger">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div class="d-flex align-items-center">
-                                    <div class="profile-pic me-3" style="width: 35px; height: 35px; font-size: 0.8rem; background: #28a745;">
-                                        XM
-                                    </div>
-                                    <div>
-                                        <div class="fw-bold">Xiu Minghao</div>
-                                        <small class="text-muted">ID: USR002</small>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>xiu@example.com</td>
-                            <td><span class="badge bg-secondary">User</span></td>
-                            <td><span class="badge bg-success">Active</span></td>
-                            <td>2024-01-20</td>
+                            <td></td>
+                            <td></td>
                             <td>
                                 <button class="btn btn-sm btn-outline-primary me-1">
                                     <i class="fa-solid fa-edit"></i>

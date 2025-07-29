@@ -247,10 +247,10 @@
             <div class="user-profile dropdown">
                 <div class="d-flex align-items-center" data-bs-toggle="dropdown" style="cursor: pointer;">
                     <div class="profile-pic">
-                        {{ strtoupper(substr(Auth::guard('admin')->user()->username, 0, 2)) }}
+                        {{ strtoupper(substr(Auth::guard('admin')->user()->nama, 0, 2)) }}
                     </div>
                     <div class="user-info">
-                        <div class="user-name">{{ Auth::guard('admin')->user()->username }}</div>
+                        <div class="user-name">{{ Auth::guard('admin')->user()->nama }}</div>
                         <div class="user-role">Administrator</div>
                     </div>
                     <i class="fa-solid fa-chevron-down" style="color: #666;"></i>

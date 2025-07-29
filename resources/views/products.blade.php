@@ -392,47 +392,4 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row mb-4">
-                <div class="col-md-5 mb-4 mb-md-0">
-                    <div class="footer-title">Choose and use your favorite product</div>
-                    <div class="mb-2">
-                        <i class="fa-solid fa-envelope me-2"></i>
-                        lentera.cam@gmail.com
-                    </div>
-                </div>
-                <div class="col-md-2 mb-4 mb-md-0">
-                    <div class="footer-title">Features</div>
-                    <a href="{{ url('/') }}">Home</a>
-                    <a href="{{ url('/products') }}">Product</a>
-                    <a href="{{ url('/reviews') }}">Review</a>
-                </div>
-                <div class="col-md-2 mb-4 mb-md-0">
-                    <div class="footer-title">General</div>
-                    <a href="{{ url('/contact') }}">Contact Us</a>
-                </div>
-                <div class="col-md-3">
-                    <div class="footer-title">Find Us</div>
-                    <div>Malang, Indonesia</div>
-                    <a href="#">View On Map</a>
-                </div>
-            </div>
-            <hr>
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <div class="logo">LENTERA</div>
-                </div>
-                <div class="col-md-6 text-md-end">
-                    <div class="mb-2">
-                        <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="#" class="social-icon"><i class="fa-brands fa-facebook"></i></a>
-                    </div>
-                    <div style="color: #666; font-size: 0.9rem;">©lentera2024. all right reserved</div>
-                </div>
-            </div>
-        </div>
 @endsection 
