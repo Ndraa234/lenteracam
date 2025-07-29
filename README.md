@@ -1,61 +1,151 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Lentera Cam - Camera Rental System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A modern camera rental management system built with Laravel 11.
 
-## About Laravel
+## 🎯 About
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Lentera Cam is a comprehensive camera rental platform that allows users to browse, rent, and manage camera equipment. The system includes both user-facing features and an admin panel for managing products, rentals, and users.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### User Features
+- Browse camera and lens catalog
+- View detailed product information
+- User registration and authentication
+- Rental management
+- Testimonials and reviews
 
-## Learning Laravel
+### Admin Features
+- **Secure Admin Login**: Protected admin panel with authentication
+- **Product Management**: Add, edit, and delete camera equipment
+- **Inventory Management**: Track stock levels and availability
+- **User Management**: Manage customer accounts
+- **Rental Management**: Process and track rentals
+- **Dashboard Analytics**: Real-time statistics and insights
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## 🛠️ Technology Stack
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **Backend**: Laravel 11
+- **Frontend**: Bootstrap 5, Blade Templates
+- **Database**: MySQL
+- **Authentication**: Laravel's built-in auth system with custom admin guard
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 📋 Requirements
 
-## Laravel Sponsors
+- PHP 8.2+
+- Composer
+- MySQL 5.7+
+- Node.js & NPM (for asset compilation)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🚀 Installation
 
-### Premium Partners
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd lenteracam
+   ```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. **Install dependencies**
+   ```bash
+   composer install
+   npm install
+   ```
 
-## Contributing
+3. **Environment setup**
+   ```bash
+   cp .env.example .env
+   php artisan key:generate
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. **Configure database**
+   - Update `.env` file with your database credentials
+   - Run migrations: `php artisan migrate`
+   - Seed the database: `php artisan db:seed`
 
-## Code of Conduct
+5. **Start the application**
+   ```bash
+   php artisan serve
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔐 Admin Access
 
-## Security Vulnerabilities
+Default admin credentials:
+- **Username**: `admin`
+- **Password**: `admin123`
+- **Login URL**: `/admin/login`
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 📁 Project Structure
 
-## License
+```
+lenteracam/
+├── app/
+│   ├── Http/Controllers/
+│   │   ├── AdminController.php    # Admin panel logic
+│   │   ├── LandingController.php  # Landing page
+│   │   ├── ProductController.php  # Product management
+│   │   └── DashboardController.php
+│   ├── Models/
+│   │   ├── Admin.php             # Admin user model
+│   │   ├── Barang.php            # Product model
+│   │   ├── Kategori.php          # Category model
+│   │   └── User.php              # Customer model
+│   └── Http/Middleware/
+│       └── AdminMiddleware.php   # Admin authentication
+├── resources/views/
+│   ├── admin/                    # Admin panel views
+│   │   ├── login.blade.php
+│   │   ├── dashboard.blade.php
+│   │   └── products.blade.php
+│   └── layouts/
+│       └── admin.blade.php       # Admin layout
+└── routes/
+    └── web.php                   # Application routes
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🔧 Configuration
+
+### Admin Authentication
+The admin system uses a separate authentication guard:
+- **Guard**: `admin`
+- **Provider**: `admins`
+- **Model**: `App\Models\Admin`
+- **Table**: `admin`
+
+### Database Tables
+- `admin` - Admin users
+- `users` - Customer accounts
+- `barang` - Products (cameras/lenses)
+- `kategori` - Product categories
+- `penyewaan` - Rental transactions
+
+## 🎨 Customization
+
+### Styling
+- Admin panel uses Bootstrap 5 with custom CSS
+- Responsive design for mobile devices
+- Modern gradient backgrounds and card layouts
+
+### Adding New Features
+1. Create controller methods in `AdminController`
+2. Add routes in `routes/web.php`
+3. Create views in `resources/views/admin/`
+4. Update navigation in `resources/views/layouts/admin.blade.php`
+
+## 📝 License
+
+This project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
+
+## 📞 Support
+
+For support and questions, please contact the development team.
+
+---
+
+**Lentera Cam** - Making camera rental simple and efficient.
